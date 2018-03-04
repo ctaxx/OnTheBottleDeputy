@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="OnTheBottlePostgresDeputy:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="OnTheBottleDeputy.war">
+      <element id="artifact" artifact-name="OnTheBottlePostgresDeputy:war exploded" />
+    </root>
+  </artifact>
+</component>
