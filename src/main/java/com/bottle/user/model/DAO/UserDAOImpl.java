@@ -13,10 +13,10 @@ public class UserDAOImpl implements UserDAO {
         Session session = null;
         UsersEntity user = null;
         try{
-            System.out.println("!!!!!!!!!!!");
+            System.out.println("UserDAOImpl works");
             session = HibernateSessionFactory.getSessionFactory().openSession();
             session.beginTransaction();
-            user = session.load(UsersEntity.class, id);
+            user = session.get(UsersEntity.class, id);
 
    //         System.out.println("A name of user is " + user.getName());
 

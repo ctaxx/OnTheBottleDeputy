@@ -1,13 +1,12 @@
+window.online = showUsers();
 function showUsers() {
-
     $.ajax({
         type: "GET",
         url:"/showUsers",
         dataType: "json",
         success: function(data) {
 
-            var responce = data.result;
-      //      document.getElementById("user-surname-label").innerText = responce.surname;
+            // document.getElementById("user-surname-label").innerText = data;
             var table = document.createElement("table");
 
             var nameRow = table.insertRow();
@@ -15,21 +14,22 @@ function showUsers() {
             var nameRowData = nameRow.insertCell(1);
 
             nameRowTitle.innerText = "name";
-            nameRowData.innerText = responce.name;
+            nameRowData.innerText = data.user.name;
+            // nameRowData.innerText = response.name;
 
             var surnameRow = table.insertRow();
             var surnameRowTitle = surnameRow.insertCell(0);
             var surnameRowData = surnameRow.insertCell(1);
 
             surnameRowTitle.innerText = "surname";
-            surnameRowData.innerText = responce.surname;
+            surnameRowData.innerText = data.user.surname;
 
             var ageRow = table.insertRow();
             var ageRowTitle = ageRow.insertCell(0);
             var ageRowData = ageRow.insertCell(1);
 
             ageRowTitle.innerText = "age";
-            ageRowData.innerText = responce.age;
+            ageRowData.innerText = data.user.age;
 
             document.getElementById("table-area").appendChild(table);
         }
