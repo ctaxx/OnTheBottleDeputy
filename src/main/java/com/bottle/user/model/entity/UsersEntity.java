@@ -15,6 +15,7 @@ import javax.persistence.*;
 @Table(name = "users", schema = "public", catalog = "sub_user")
 public class UsersEntity {
     @Id
+    @GeneratedValue
     @Column(name = "id", nullable = false)
     private long id;
     @Basic

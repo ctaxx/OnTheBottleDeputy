@@ -13,12 +13,12 @@ public class TestController {
 
     @ResponseBody
     @GetMapping(path = "/showUsers")
-    public ResponseDTO showUsers(RequestDTO request){
+    public ResponseDTO showUsers(RequestDTO request) {
         UserDAOImpl userDAO = new UserDAOImpl();
         UsersEntity user = null;
 
 //        user = (UsersEntity)userDAO.getEntityByID(request.getId());
-        user = (UsersEntity)userDAO.getEntityByID(3);
+        user = (UsersEntity) userDAO.getEntityByID(3);
         System.out.println("A name of the user is " + user.getName());
 
         return new ResponseDTO(user);

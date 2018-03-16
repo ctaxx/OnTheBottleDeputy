@@ -5,26 +5,27 @@ import org.hibernate.Session;
 
 import java.sql.SQLException;
 import java.util.Set;
+
 import com.bottle.user.model.entity.UsersEntity;
 
 public class UserDAOImpl implements UserDAO {
 
-    public Object getEntityByID(long id){
+    public Object getEntityByID(long id) {
         Session session = null;
         UsersEntity user = null;
-        try{
+        try {
             System.out.println("UserDAOImpl works");
             session = HibernateSessionFactory.getSessionFactory().openSession();
             session.beginTransaction();
             user = session.get(UsersEntity.class, id);
 
-   //         System.out.println("A name of user is " + user.getName());
+            //         System.out.println("A name of user is " + user.getName());
 
             session.getTransaction().commit();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.err.println(e.getMessage());
-        }finally{
-            if(session != null && session.isOpen()){
+        } finally {
+            if (session != null && session.isOpen()) {
                 session.close();
             }
         }

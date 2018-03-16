@@ -1,10 +1,11 @@
-window.online = showUsers();
+window.onload = showUsers();
+
 function showUsers() {
     $.ajax({
         type: "GET",
-        url:"/showUsers",
+        url: "/showUsers",
         dataType: "json",
-        success: function(data) {
+        success: function (data) {
 
             // document.getElementById("user-surname-label").innerText = data;
             var table = document.createElement("table");
