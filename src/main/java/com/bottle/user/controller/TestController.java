@@ -23,9 +23,9 @@ public class TestController {
     @ResponseBody
     @GetMapping(path = "/showUsers")
     public ResponseDTO showUsers(RequestDTO request) {
-        UsersEntity user;
+//        UsersEntity user;
 //        user = userRepository.getOne(3);
-        user = userRepository.findOne(3);
+        UsersEntity user = userRepository.findOne(3);
         System.out.println("TestController: A name of the user is " + user.getName());
         return new ResponseDTO(user);
 
