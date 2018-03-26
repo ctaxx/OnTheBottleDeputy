@@ -17,7 +17,7 @@ public class UsersEntity {
     @Id
     @GeneratedValue
     @Column(name = "id", nullable = false)
-    private long id;
+    private Integer id;
     @Basic
     @Column(name = "login", nullable = false, length = 45)
     private String login;
