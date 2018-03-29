@@ -26,6 +26,9 @@ public class TestController {
 //        UsersEntity user;
 //        user = userRepository.getOne(3);
         UsersEntity user = userRepository.findOne(3);
+
+//        System.out.println(UUID.fromString("3"));
+
         System.out.println("TestController: A name of the user is " + user.getName());
         return new ResponseDTO(user);
 
